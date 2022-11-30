@@ -1,0 +1,37 @@
+name: atento
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  audioplayers: ^1.1.1
+  intl: ^0.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.11.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.jpg"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/aceitar/
+    - assets/sounds/correr/
+    - assets/sounds/doze/
+    - assets/sounds/nove/
+    - assets/sounds/seis/
+    - assets/sounds/truco/
+    - assets/images/
