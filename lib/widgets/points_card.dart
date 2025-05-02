@@ -4,9 +4,12 @@ class PointsCard extends StatelessWidget {
   final String points;
   final String label;
   final String hour;
-  const PointsCard(
-      {Key? key, required this.points, required this.label, required this.hour})
-      : super(key: key);
+  const PointsCard({
+    super.key,
+    required this.points,
+    required this.label,
+    required this.hour,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +17,7 @@ class PointsCard extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w900,
-            fontSize: 30,
-          ),
+          style: Theme.of(context).textTheme.displayMedium,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -33,11 +32,7 @@ class PointsCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   points,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 55,
-                  ),
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
               ),
             ),
@@ -47,9 +42,17 @@ class PointsCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Icon(Icons.access_time),
+              const Icon(
+                Icons.access_time,
+                color: Colors.white,
+              ),
               Padding(
-                  padding: const EdgeInsets.only(left: 5), child: Text(hour))
+                padding: const EdgeInsets.only(left: 5),
+                child: Text(
+                  hour,
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+              )
             ],
           )
       ],

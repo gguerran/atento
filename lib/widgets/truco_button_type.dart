@@ -3,28 +3,22 @@ import 'package:flutter/material.dart';
 class TrucoTypeButtom extends StatelessWidget {
   final VoidCallback? onPressed;
   final Widget image;
+  final bool isSelected;
 
   const TrucoTypeButtom({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.image,
-  }) : super(key: key);
+    required this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-          vertical: 10,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
-          side: const BorderSide(color: Color(0xFF4380DC), width: 3),
-        ),
+        backgroundColor: isSelected ? const Color(0xFF4380DC) : Colors.white,
       ),
-      onPressed: onPressed,
+      onPressed: isSelected ? null : onPressed,
       child: image,
     );
   }
